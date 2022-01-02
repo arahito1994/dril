@@ -2206,17 +2206,6 @@ array[a], array[b] = array[b], array[a]
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 def bubble_sort(data)
-  length = data.length
-
-  for i in data
-    data.each do |i|
-    data[a]
-    end
-  # 先頭から隣の数同士の大きさを比べる
-  # 先頭側の要素の方が大きい場合は、配列の位置を隣同士で交換する
-  end
-end
-def bubble_sort(data)
   length = data.length 
   for i in 0..(length-1) 
     for j in 1.. (length-i-1) 
