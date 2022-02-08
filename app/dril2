@@ -1,0 +1,117 @@
+問題.1
+
+puts hash.keys
+puts hash.values
+上記のメソッドを実行した時に
+
+one
+two
+three
+1
+2
+3
+
+とターミナルに表示されるような変数hashを作成するためのコードをシンボルを使って記述してください
+
+hash = { one: 1, two: 2, three: 3 }
+
+
+問題.1
+配列の内部に、複数のユーザーの情報をハッシュとして持つ変数user_dataがあります。
+
+user_data = [
+ {user: {profile: {name: 'George'}}},
+ {user: {profile: {name: 'Alice'}}},
+ {user: {profile: {name: 'Taro'}}},
+]
+user_dataを利用して、全てのユーザーの名前だけが出力されるようにRubyでコーディングしてください。
+ただし、出力結果は次のようになるものとします。
+
+
+George
+Alice
+Taro
+
+user_data each do |u|
+ puts u [:user] [:profile] [:name]
+end
+
+user_data each{ |u| puts dig (:user, :profile, :name)}
+
+
+問題.1
+
+class Article
+
+  def initialize(author, title, content)
+    @author = author
+    @title = title
+    @content = content
+  end
+
+end
+上記のコードに追加を行い、以下の出力結果を得られるようにしてください。ただし、クラスとインスタンスを使用するものとします。
+
+
+著者: 阿部
+タイトル: Rubyの素晴らしさについて
+本文: Awesome Ruby!
+
+class Article
+  def initialize(author, title, content)
+     @author = author
+     @title = title
+     @content = content
+  end
+
+  def author
+     @author
+  end
+
+  def title
+     @title
+  end
+
+  def content
+     @content
+  end
+
+end
+
+article = Article.new("阿部", "Rubyの素晴らしさについて", "Awsome Ruby!")
+puts "著者: #{article.author}"
+puts "タイトル: #{article.title}"
+puts "本文: #{article.content}"
+
+
+問題.1
+今日の曜日を表示するコードをDateクラスを使用して記述してください。
+
+ただし、金曜日だった場合だけ以下のように表示の内容を変えてください。
+
+（出力内容）
+「今日は月曜日」
+「今日は金曜日だ ！！！」
+
+ヒント
+ Dateクラス
+DateクラスとはRubyの標準ライブラリの機能です。Dateクラスを使うには以下一文を記述します。
+
+
+require "date"
+次に、Dateクラスを用いて「今日の曜日」を取得する場合は以下のように記述します。
+
+
+Date.today.wday
+wdayは曜日を0(日曜日)から6(土曜日)の整数で取得することができるDateクラスに用意されているメソッドです。
+
+たとえば、以下のように使うことができます。
+
+
+require "date"
+
+day = Date.today.wday
+
+puts day
+これを実行すると、曜日に合わせた数字が出力されます。たとえば、木曜日だとすれば4が出力されることになります。
+
