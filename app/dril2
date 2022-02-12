@@ -242,14 +242,12 @@ end
 
 
 def search(target_num, input)
-  input.each_with_index  do |item, i|
-  if target_num == input
-      puts "#{i}番目にあります。"
-  else
-      puts "その数は含まれません"
-  end
-end
 
-input = [3, 5, 9 ,12, 15, 21, 29, 35, 42, 51, 62, 78, 81, 87, 92, 93]
-# 呼び出し例
-search(11, input)
+  input.each_with_index do |num, index|
+    if num == target_num
+        puts "#{index + 1}番目にあります。"
+        return
+    end
+  end
+  puts "その数は含まれません"
+end
